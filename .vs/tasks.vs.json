@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "task-task1",
+      "appliesTo": "Week1Lab1/task1.cs",
+      "type": "launch"
+    },
+    {
+      "taskName": "task-Task1",
+      "appliesTo": "Week1/Task1.cs",
+      "type": "launch"
+    }
+  ]
+}
