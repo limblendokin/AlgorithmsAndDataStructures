@@ -7,24 +7,27 @@ using System.Threading.Tasks;
 
 namespace Week1Lab1
 {
+    // В данной задаче требуется вычислить значение выражения a+b^2.
     class Task2
     {
         static void Main(string[] args)
         {
-            String currentDirectory = Directory.GetCurrentDirectory();
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string[] arguments;
+            long a, b, result;
+
             using (StreamReader sr = new StreamReader(currentDirectory + @"\input.txt"))
             {
-                using (StreamWriter sw = new StreamWriter(currentDirectory + @"\output.txt"))
-                {
-                    while (!sr.EndOfStream)
-                    {
-                        String line = sr.ReadLine();
-                        long a = long.Parse(line.Split(' ').ElementAt(0));
-                        long b = long.Parse(line.Split(' ').ElementAt(1));
-                        long result = a + b * b;
-                        sw.WriteLine(result);
-                    }
-                }
+                arguments = sr.ReadLine().Split(new char[] { ' ' }).ToArray();
+            }
+
+            a = long.Parse(arguments[0]);
+            b = long.Parse(arguments[1]);
+            result = a + b * b;
+
+            using (StreamWriter sw = new StreamWriter(currentDirectory + @"\output.txt"))
+            {
+                sw.WriteLine(result);
             }
         }
     }
